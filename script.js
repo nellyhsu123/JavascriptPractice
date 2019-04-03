@@ -35,22 +35,15 @@ if(civilStatus === 'married') {
 } else {
 	console.log(firstName + ' will hopefully marry soon :)');
 }
-
-
 /*******************
 * The Ternary Operator
 */
 
 /*var firstName = 'John';
 var age = 22;
-
 age >= 18 ? console.log(firstName + ' drinks beer') : console.log(firstName + ' drinks juice') 
-
-
 //Switch statement
-
 var job = 'teacher';
-
 switch (job) {
 	case 'teacher':
 		console.log(firstName + ' teaches kids how to code.');
@@ -61,7 +54,6 @@ switch (job) {
 	default:
 		console.log(firstName + ' does something else.');
 }
-
 /*******************
 * Truthy and Falsy values and equlaity operators
 */
@@ -71,13 +63,9 @@ switch (job) {
 
 /**********************
 * Coding Challenge 2
-
 jScoreAvg = (100 + 100 + 100) / 3
-
 mScoreAvg = (120 + 89 + 95) / 3
-
 maryScoreAvg = (96 + 87 + 115) / 3
-
 if(jScoreAvg > mScoreAvg && jScoreAvg > maryScoreAvg) {
 	console.log('John\'s team wins with an average score of: ' + jScoreAvg);
 }  else if(mScoreAvg > jScoreAvg && mScoreAvg > maryScoreAvg){
@@ -87,18 +75,14 @@ if(jScoreAvg > mScoreAvg && jScoreAvg > maryScoreAvg) {
 } else {
 	console.log('It\'s a tie!');
 }
-
-
 var john = ['John', 'Smith', 1990, 'designer'];
-
 var isDesigner = john.indexOf('designer') !== -1 ? 'John IS a designer' : 'John is NOT a designer';
-
 console.log(isDesigner);
 */
 
 /*******************
 * Coding Challenge 3
-*/
+
 
 function tipCalculator(bill) {
 	if(bill < 50) {
@@ -124,5 +108,39 @@ totals.push(bills[1] + tips[1]);
 totals.push(bills[2] + tips[2]);
 
 console.log(totals);
+
+*/
+
+/**************
+* Coding Challenge 4
+*/
+
+var mark = {
+	fullName: 'Mark Sanchez',
+	mass: 80,
+	height: 1.8,
+	calcBMI: function() {
+		this.bmi = this.mass / (this.height * this.height);
+		return this.bmi;
+	}
+}
+
+var john = {
+	fullName: 'John Smith',
+	mass: 74,
+	height: 1.68,
+	calcBMI: function() {
+		this.bmi = this.mass / (this.height * this.height);
+		return this.bmi;
+	}
+}
+
+if(mark.calcBMI() > john.calcBMI()) {
+	console.log(mark.fullName + ' has a BMI of ' + mark.bmi + ' which is greater than ' + john.fullName + ' who has a BMI of ' + john.bmi);
+} else if(mark.calcBMI() < john.calcBMI()){
+	console.log(john.fullName + ' has a BMI of ' + john.bmi + ' which is greater than ' + mark.fullName + ' who has a BMI of ' + mark.bmi);
+} else {
+	console.log('They have the same BMI');
+}
 
 
