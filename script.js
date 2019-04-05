@@ -113,7 +113,7 @@ console.log(totals);
 
 /**************
 * Coding Challenge 4
-*/
+
 
 var mark = {
 	fullName: 'Mark Sanchez',
@@ -142,5 +142,82 @@ if(mark.calcBMI() > john.calcBMI()) {
 } else {
 	console.log('They have the same BMI');
 }
+*/
+
+/********************
+* Coding Challenge 5
+*/
+
+var john = {
+	firstName: 'John',
+	bills: [124, 48, 268, 180, 42],
+	tips: [],
+	final: [],
+	calcTip: function() {
+
+		for(var i = 0; i < this.bills.length; i++){
+			var bill = this.bills[i]; 
+			if(bill < 50) {
+				this.tips[i] = this.bills[i] * 0.2;
+			} else if(bill >= 50 && bill < 200) {
+				this.tips[i] = this.bills[i] * 0.15;
+			} else {
+				this.tips[i] = this.bills[i] * 0.1;
+			}
+
+			//console.log(this.tips[i], this.bills[i]);
+
+			this.final[i] = this.bills[i] + this.tips[i];
+
+			//console.log(this.final[i]);
+		}
+	}
+}
+
+john.calcTip();
+
+var mark = {
+	firstName: 'Mark',
+	bills: [77, 475, 110, 45],
+	tips: [],
+	final: [],
+	calcTip: function() {
+		for(var i = 0; i < this.bills.length; i++){
+			if(this.bills[i] < 100) {
+				this.tips[i] = this.bills[i] * 0.2;
+			} else if(this.bills[i] >= 100 && this.bills[i] < 300) {
+				this.tips[i] = this.bills[i] * 0.1;
+			} else {
+				this.tips[i] = this.bills[i] * 0.25;
+			}
+
+			//console.log(this.tips[i], this.bills[i]);
+
+			this.final[i] = this.bills[i] + this.tips[i];
+
+			//console.log(this.final[i]);
+		}
+	}
+}
+
+mark.calcTip();
+
+//console.log(john, mark);
+
+function avgTip(tips) {
+	var totalTips = 0;
+	var avgTips = 0;
+	for(var i = 0; i < tips.length; i++) {
+		totalTips += tips[i];
+	}
+	avgTips = totalTips / tips.length;
+	return avgTips;
+}
+
+john.avgT = avgTip(john.tips);
+mark.avgT = avgTip(mark.tips);
+
+console.log(john, mark);
+
 
 
